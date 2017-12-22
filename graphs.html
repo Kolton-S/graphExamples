@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Graphs Examples</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+</head>
+<body>
+  <canvas id="ageDistribution" style="width: 50%;"></canvas>
+<script>
+var ctx = document.getElementById("ageDistribution").getContext('2d');
+var ageDistribution = new Chart(ctx, {
+    responsive: false,
+    width:500,
+    height:300,
+    maintainAspectRatio: this.maintainAspectRatio,
+    type: 'bar',
+    data: {
+        labels: ["0 - 14", "15 - 64", "65 and over"],
+        datasets: [{
+            label: 'Age Distribution in 2011 in London',
+            data: [90000, 310000, 87000],
+            backgroundColor: [
+                'rgba(109, 184, 90, 1)',
+                'rgba(109, 184, 90, 0.6)',
+                'rgba(109, 184, 90, 0.3)'
+            ],
+            borderColor: [
+                'rgba(109, 184, 90, 1)',
+                'rgba(109, 184, 90, 1)',
+                'rgba(109, 184, 90, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
+<canvas id="ageMedian" style="width: 50%;"></canvas>
+<script>
+var ctx = document.getElementById("ageMedian").getContext('2d');
+var ageMedian = new Chart(ctx, {
+  responsive: false,
+  width:500,
+  height:300,
+  maintainAspectRatio: this.maintainAspectRatio,
+  type: 'bar',
+  data: {
+      labels: ["Canada", "Ontario", "London"],
+      datasets: [{
+          label: 'Age Distribution in 2011 in London',
+          data: [40.6, 40.4, 40],
+          backgroundColor: [
+              'rgba(67, 15, 255, 1)',
+              'rgba(67, 15, 255, 0.7)',
+              'rgba(67, 15, 255, 0.3)'
+          ],
+          borderColor: [
+              'rgba(67, 15, 255, 1)',
+              'rgba(67, 15, 255, 1)',
+              'rgba(67, 15, 255, 1)'
+          ],
+          borderWidth: 1
+      }]
+  },
+  options: {
+      scales: {
+          yAxes: [{
+              ticks: {
+                  beginAtZero:true
+              }
+          }]
+      }
+  }
+});
+</script>
+<canvas id="marriedChild" style="width: 50%;"></canvas>
+<script>
+var ctx = document.getElementById("marriedChild").getContext('2d');
+var marriedChild = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ["Married with Children", "Married Without Children", "Common-law with Children", "Common-law Without Children"],
+    datasets: [{
+      backgroundColor: [
+        "#2ecc71",
+        "#3498db",
+        "#95a5a6",
+        "#9b59b6"
+      ],
+      data: [41, 43, 6, 10]
+    }]
+  }
+});
+
+</script>
+</body>
+</html>
